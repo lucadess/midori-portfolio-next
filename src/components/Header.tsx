@@ -1,32 +1,32 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet"
+import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from "@/components/ui/sheet"
 
 export default function Component() {
   return (
     <header className="sticky top-0 z-50 w-full bg-creme">
       <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4 md:px-6">
-        <Link href="#" className="flex items-center gap-2 text-3xl font-bold" prefetch={false}>
+        <Link href="/" className="flex items-center gap-2 text-3xl font-bold" prefetch={false}>
             MF
           <span className="sr-only">Midori Fuchs</span>
         </Link>
         <nav className="hidden items-center gap-6 text-2xl font-medium md:flex">
           <Link
-            href="#"
+            href="/"
             className="text-greenDark hover:text-greenLight"
             prefetch={false}
           >
             home
           </Link>
           <Link
-            href="#"
+            href="/about"
             className="text-greenDark hover:text-greenLight"
             prefetch={false}
           >
             about me
           </Link>
           <Link
-            href="#"
+            href="/work"
             className="text-greenDark hover:text-greenLight"
             prefetch={false}
           >
@@ -46,27 +46,33 @@ export default function Component() {
                   Menu
               </SheetTitle>
               <div className="grid gap-4 p-4">
-                <Link
-                  href="#"
-                  className="text-2xl font-medium text-greenDark hover:text-greenLight"
-                  prefetch={false}
-                >
-                  home
-                </Link>
-                <Link
-                  href="#"
-                  className="text-2xl font-medium text-greenDark hover:text-greenLight"
-                  prefetch={false}
-                >
-                  about me
-                </Link>
-                <Link
-                  href="#"
-                  className="text-2xl font-medium text-greenDark hover:text-greenLight"
-                  prefetch={false}
-                >
-                  my work
-                </Link>
+                <SheetClose asChild>
+                  <Link
+                    href="/"
+                    className="text-2xl font-medium text-greenDark hover:text-greenLight"
+                    prefetch={false}
+                  >
+                    home
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/about"
+                    className="text-2xl font-medium text-greenDark hover:text-greenLight"
+                    prefetch={false}
+                  >
+                    about me
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/work"
+                    className="text-2xl font-medium text-greenDark hover:text-greenLight"
+                    prefetch={false}
+                  >
+                    my work
+                  </Link>
+                </SheetClose>
               </div>
             </SheetContent>
           </Sheet>
