@@ -41,7 +41,7 @@ export default function HomeAbout(){
                         <div className="home-about-cta flex flex-col gap-4 mt-[1em]">
                             <p className="text-justify">Phew. Well, I think that was enough about me. How about I finally show you some of the stuff I do?</p>
                             <Button className="lg:self-center" size="lg" asChild>
-                                <Link href="/login">Sure. Let&apos;s go!</Link>
+                                <Link href="/about">Sure. Let&apos;s go!</Link>
                             </Button>
                         </div>
                     </div>
