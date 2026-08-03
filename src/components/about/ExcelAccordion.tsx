@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import { WaveDivider } from "@/components/shared/WaveDivider"
-import { midoriAvatar } from "@/assets/images"
+import { midoriExcel } from "@/assets/images"
 
 interface ExcelItem {
   title: string
@@ -35,8 +35,8 @@ export default function ExcelAccordion() {
     <section className="relative bg-orangeLight pb-24 pt-16 text-creme sm:pt-20">
       <div className="container flex flex-col items-center gap-12 lg:flex-row lg:items-start">
         <Image
-          src={midoriAvatar}
-          alt="Midori Fuchs smiling outdoors"
+          src={midoriExcel}
+          alt="Midori Fuchs smiling while holding a ginger cat outdoors"
           className="w-full max-w-sm rounded-3xl object-cover lg:sticky lg:top-24 lg:w-2/5"
         />
 

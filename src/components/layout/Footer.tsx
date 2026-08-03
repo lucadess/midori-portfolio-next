@@ -1,4 +1,7 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { InstagramIcon, EtsyIcon, LinkedInIcon } from "@/components/icons/SocialIcons"
 import { footerLinks } from "@/lib/nav-links"
@@ -12,6 +15,9 @@ const socials = [
 ]
 
 export default function Footer() {
+  const pathname = usePathname()
+  const onContactPage = pathname === "/contact"
+
   return (
     <footer className="bg-creme pb-8 pt-12 sm:pt-16">
       <div className="container grid grid-cols-1 gap-12 md:grid-cols-[2fr_1fr_1fr] md:gap-8">
@@ -35,28 +41,37 @@ export default function Footer() {
           ))}
         </nav>
 
-        <div className="flex flex-col items-start gap-4 md:items-end md:text-right">
-          <div className="flex flex-col gap-1">
-            <a href="mailto:midori.fuchs@gmail.com" className="hover:text-greenLight">
-              midori.fuchs@gmail.com
-            </a>
-            <p>📍 The Hague, The Netherlands</p>
+        {onContactPage ? (
+          <div className="flex flex-col items-start gap-2 md:items-end md:text-right">
+            <p className="max-w-[16rem]">
+              Already found my email up there? Good — that&apos;s the only one I&apos;ve got. No secret second inbox
+              hiding down here, I promise.
+            </p>
           </div>
-          <div className="flex gap-3">
-            {socials.map(({ href, label, Icon, bg }) => (
-              <a
-                key={label}
-                target="_blank"
-                rel="noopener noreferrer"
-                href={href}
-                aria-label={label}
-                className={`flex h-9 w-9 items-center justify-center rounded-full text-creme ${bg}`}
-              >
-                <Icon className="h-5 w-5" />
+        ) : (
+          <div className="flex flex-col items-start gap-4 md:items-end md:text-right">
+            <div className="flex flex-col gap-1">
+              <a href="mailto:midori.fuchs@gmail.com" className="hover:text-greenLight">
+                midori.fuchs@gmail.com
               </a>
-            ))}
+              <p>📍 The Hague, The Netherlands</p>
+            </div>
+            <div className="flex gap-3">
+              {socials.map(({ href, label, Icon, bg }) => (
+                <a
+                  key={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={href}
+                  aria-label={label}
+                  className={`flex h-9 w-9 items-center justify-center rounded-full text-creme ${bg}`}
+                >
+                  <Icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       <p className="container mt-12 text-center text-sm">© 2025 Midori Fuchs. All rights reserved.</p>

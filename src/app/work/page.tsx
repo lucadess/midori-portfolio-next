@@ -7,7 +7,7 @@ export default function Work() {
     <div>
       <section className="pb-2 pt-8">
         <div className="container">
-          <h1 className="text-center text-6xl leading-[1.15] sm:text-7xl md:text-8xl">My Work</h1>
+          <h1 className="text-center text-5xl leading-[1.15] sm:text-6xl md:text-7xl">My Work</h1>
         </div>
       </section>
 

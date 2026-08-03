@@ -40,8 +40,6 @@ const delays = ["0s", "0.4s", "0.8s", "1.2s", "1.6s", "2s", "2.4s", "2.8s", "3.2
 interface Tool {
   src: StaticImageData
   alt: string
-  /** Icons that ship as a bare mark (transparent background) need a tile behind them. */
-  tile?: boolean
 }
 
 const tools: Tool[] = [
@@ -51,9 +49,9 @@ const tools: Tool[] = [
   { src: indesignIcon, alt: "Adobe InDesign" },
   { src: frescoIcon, alt: "Adobe Fresco" },
   { src: davinciResolveIcon, alt: "DaVinci Resolve" },
-  { src: capcutIcon, alt: "CapCut", tile: true },
+  { src: capcutIcon, alt: "CapCut" },
   { src: canvaIcon, alt: "Canva" },
-  { src: amplienceIcon, alt: "Amplience", tile: true },
+  { src: amplienceIcon, alt: "Amplience" },
 ]
 
 // 10% smaller than a round h-16/h-28/h-32 scale: 64→57.6px, 112→100.8px, 128→115.2px
@@ -71,13 +69,9 @@ export default function HardSkillsSection() {
   return (
     <section className="relative bg-creme py-24 sm:py-28">
       <div className="container relative mx-auto aspect-[3/4] max-w-xl sm:aspect-[16/10] sm:max-w-3xl">
-        {tools.map(({ src, alt, tile }, i) => (
-          <div
-            key={alt}
-            className={cn(badgeBase, posClasses[i], tile && "flex items-center justify-center bg-creme p-3")}
-            style={anim(i)}
-          >
-            <Image src={src} alt={alt} fill={!tile} sizes="120px" className={tile ? "h-full w-full object-contain" : "object-cover"} />
+        {tools.map(({ src, alt }, i) => (
+          <div key={alt} className={cn(badgeBase, posClasses[i])} style={anim(i)}>
+            <Image src={src} alt={alt} fill sizes="120px" className="object-cover" />
           </div>
         ))}
 

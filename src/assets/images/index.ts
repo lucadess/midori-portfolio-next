@@ -8,6 +8,9 @@ export { default as misoAfter } from "./miso-after.png"
 export { default as bowlBefore } from "./bowl-before.png"
 export { default as bowlAfter } from "./bowl-after.png"
 
+export { default as midoriDrinking } from "./about/midori-drinking.jpg"
+export { default as midoriExcel } from "./about/midori-excel.jpg"
+
 export { default as photoshopIcon } from "./tools/photoshop.png"
 export { default as premiereProIcon } from "./tools/premiere-pro.png"
 export { default as illustratorIcon } from "./tools/illustrator.png"
