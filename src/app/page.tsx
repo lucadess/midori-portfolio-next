@@ -1,13 +1,13 @@
-import Hero from "../components/Hero"
-import HomeWork from "../components/HomeWork"
-import HomeAbout from "../components/HomeAbout"
+import Hero from "@/components/home/Hero"
+import WorkSection from "@/components/home/WorkSection"
+import AboutSection from "@/components/home/AboutSection"
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <HomeWork />
-      <HomeAbout />
+      <WorkSection />
+      <AboutSection />
     </main>
   );
 }

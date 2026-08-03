@@ -9,6 +9,27 @@ export default {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			heading: ['"nave"', "sans-serif"],
+  			body: ['"calluna"', "sans-serif"],
+  		},
+  		keyframes: {
+  			marquee: {
+  				from: { transform: "translateX(0)" },
+  				to: { transform: "translateX(-50%)" },
+  			},
+  			float: {
+  				// Composes with any static translate utility (e.g. -translate-x-1/2
+  				// -translate-y-1/2 for centering) instead of overwriting it, since a
+  				// raw `transform` in a keyframe replaces the whole property while running.
+  				"0%, 100%": { transform: "translate(var(--tw-translate-x, 0), var(--tw-translate-y, 0))" },
+  				"50%": { transform: "translate(var(--tw-translate-x, 0), calc(var(--tw-translate-y, 0) - 10px))" },
+  			},
+  		},
+  		animation: {
+  			marquee: "marquee 24s linear infinite",
+  			float: "float 4s ease-in-out infinite",
+  		},
   		colors: {
 			creme: 'var(--creme)',
 			orangeLight: 'var(--orange-light)',
